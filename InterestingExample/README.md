@@ -45,14 +45,22 @@ run checktime for exactly 2 operator, exactly 2 machine1, exactly 1 machine2, 6 
 
 
 Interestingly, Alloy only creates the next allocations result in Alloy Analyzer
+```
 operator1	operator0
 10		11 2
 10 2		11
 10 11 2		
 10 11		12
+```
+
 where "10" is machine 1 instance 0; "11" is machine 1 instance 1; and "2" means machine 2.
 
 And after these, the legend appears:
 
 ![image](https://user-images.githubusercontent.com/63869574/132686476-c0e15af2-7160-422d-8756-81e2bd07a9fb.png)
 
+See for instance, that the allocation where operator0 gets all the machines is not found (or not fetched):
+```
+operator1	operator0
+-		10 11 2
+```
